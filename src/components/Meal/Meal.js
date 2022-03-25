@@ -8,12 +8,25 @@ const Meal = () => {
     const [cart, setCart] = useState([]);
 
     const addToCart = (item) => {
-        const newCart = [...cart, item]
+        let newCart = [];
+
+        if (item['quantity']) {
+            item['quantity'] += 1;
+            console.log('quantity added', item['quantity']);
+
+            const restItems = cart.filter(product => product.idMeal !== item.idMeal)
+            newCart = [...restItems, item];
+        }
+        else {
+            item['quantity'] = 1;
+            console.log('quantity given 1', item['quantity']);
+            newCart = [...cart, item]
+        }
         setCart(newCart);
     }
 
     useEffect(() => {
-        fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=a')
+        fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=')
             .then(res => res.json())
             .then(data => setMeals(data.meals))
     }, [])

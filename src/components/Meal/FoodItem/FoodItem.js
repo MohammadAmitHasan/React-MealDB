@@ -1,6 +1,11 @@
 import React from 'react';
-import './FoodItem.css'
+import './FoodItem.css';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBowlFood } from '@fortawesome/free-solid-svg-icons'
+
 const FoodItem = ({ meal, addToCart }) => {
+    // console.log(meal)
     const { strMealThumb, strMeal, strTags, strArea } = meal;
     return (
         <div className='food-item'>
@@ -10,7 +15,10 @@ const FoodItem = ({ meal, addToCart }) => {
                 <p>Type: {strTags ? strTags : 'General'}</p>
                 <p>Dish Of: {strArea}</p>
             </div >
-            <button onClick={() => addToCart(meal)}>Select Item</button>
+            <button onClick={() => addToCart(meal)}>
+                Select Item
+                <span><FontAwesomeIcon icon={faBowlFood} /></span>
+            </button>
         </div>
     );
 };

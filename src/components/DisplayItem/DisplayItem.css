@@ -5,6 +5,11 @@
     box-shadow: 2px 2px 5px tomato;
     display: flex;
     align-items: center;
+
+}
+.cart-item h3, h4{
+    margin: 2px;
+    padding: 2px;
 }
 .cart-item img{
     width: 70px;
