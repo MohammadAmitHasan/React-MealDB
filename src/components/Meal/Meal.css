@@ -1,0 +1,14 @@
+.meals{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.meal-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 50px;
+}
+.selected-meal{
+    background-color: rgba(240, 128, 128, 0.308);
+    padding: 30px;
+}
