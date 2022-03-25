@@ -1,6 +1,6 @@
 import React from 'react';
 import './FoodItem.css'
-const FoodItem = ({ meal }) => {
+const FoodItem = ({ meal, addToCart }) => {
     const { strMealThumb, strMeal, strTags, strArea } = meal;
     return (
         <div className='food-item'>
@@ -10,7 +10,7 @@ const FoodItem = ({ meal }) => {
                 <p>Type: {strTags ? strTags : 'General'}</p>
                 <p>Dish Of: {strArea}</p>
             </div >
-            <button>Select Item</button>
+            <button onClick={() => addToCart(meal)}>Select Item</button>
         </div>
     );
 };

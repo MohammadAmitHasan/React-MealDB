@@ -2,8 +2,13 @@
     position: sticky;
     top: 30px;
     margin-top: 10px;
+    text-align: center;
 }
 .cart h1{
     margin-top: 0;
-    text-align: center;
+}
+.cart-list{
+    box-shadow: 2px 2px 5px gray;
+    padding: 10px;
+    border-radius: 10px;
 }
